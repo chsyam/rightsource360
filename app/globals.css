@@ -3,5 +3,6 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Montserrat", sans-serif;
+	background-color: #F7F9FC;
+	font-family: "Montserrat", sans-serif;
 }

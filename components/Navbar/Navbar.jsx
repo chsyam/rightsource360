@@ -1,9 +1,16 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
 import styles from "./../../styles/LayoutComponents/Navbar.module.css"
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import WhatsappSVG from "../icons/Whatsapp";
+import LinkedInSVG from "../icons/LinkedIn";
 
 export default function Navbar() {
+    const [toggleDropdownIndex, setToggleDropdownIndex] = useState(-1);
+    const [activeMenuIndex, setActiveMenuIndex] = useState(-1);
+
     const navbarMenuList = [
         {
             name: "Home",
@@ -44,7 +51,7 @@ export default function Navbar() {
                     link: "/employer/signup"
                 },
                 {
-                    name: "Post a Job",
+                    name: "Post Profile",
                     link: "/employer/post-job"
                 }
             ]
@@ -77,7 +84,7 @@ export default function Navbar() {
                 },
                 {
                     name: "Hot Resources",
-                    link: "/resources?hot=true"
+                    link: "/services/hot-resources?hot=true"
                 },
                 {
                     name: "Profile Validation",
@@ -98,6 +105,10 @@ export default function Navbar() {
                 {
                     name: "ATS",
                     link: "/services/ats"
+                },
+                {
+                    name: "RPO",
+                    link: "/services/rpo"
                 }
             ]
         },
@@ -123,15 +134,15 @@ export default function Navbar() {
                 },
                 {
                     name: "HRM",
-                    link: "/services/hrm"
+                    link: "/demo/hrm"
                 },
                 {
                     name: "ATS",
-                    link: "/services/ats"
+                    link: "/demo/ats"
                 },
                 {
                     name: "RPO",
-                    link: "/services/rpo"
+                    link: "/demo/rpo"
                 },
             ]
         },
@@ -141,36 +152,69 @@ export default function Navbar() {
         }
     ]
 
+    useEffect(() => {
+        navbarMenuList?.forEach((menu, index) => {
+            if (window.location.pathname.indexOf(menu.link) > -1) {
+                setActiveMenuIndex(index);
+            } else {
+                menu.subMenu?.forEach((subMenu) => {
+                    if (window.location.pathname.indexOf(subMenu.link) > -1) {
+                        setActiveMenuIndex(index);
+                    }
+                });
+            }
+        });
+    }, [activeMenuIndex, toggleDropdownIndex]);
+
     return (
-        <div className={styles.navbar}>
-            <div>RightSource360</div>
-            <div className={styles.headerMenu}>
-                {navbarMenuList.map((item, index) => {
-                    return (
-                        <ul key={index} className={styles.navigation}>
-                            <li>
-                                <a href={item.link}>
-                                    <div className={styles.link}>
-                                        {item.name}
-                                        {item.subMenu && <ChevronDown />}
-                                    </div>
-                                </a>
-                                {item.subMenu && (
-                                    <ul>
-                                        {item.subMenu.map((subItem, subIndex) => {
-                                            return (
-                                                <li key={subIndex}>
-                                                    <a href={subItem.link} className="text-red-500 font-medium">{subItem.name}</a>
-                                                </li>
-                                            )
-                                        })}
+        <nav className={styles.navbar}>
+            <div className={styles.container}>
+                <div className={styles.navContent}>
+                    <div>
+                        <Link href="/" className={styles.logo}>
+                            RightSource360
+                        </Link>
+                    </div>
+                    <div className={styles.navLinks}>
+                        {
+                            navbarMenuList.map((item, index) => {
+                                return (
+                                    <ul key={index}>
+                                        <li className={styles.dropdown}
+                                            onMouseEnter={() => setToggleDropdownIndex(index)}
+                                            onMouseLeave={() => setToggleDropdownIndex(-1)}
+                                        >
+                                            <Link href={`${item.link}`} className="">
+                                                <div className={`flex items-center gap-[2px] justify-center ${toggleDropdownIndex === index && 'text-[#0073ff]'} ${activeMenuIndex === index && 'text-[#0073ff] font-semibold'}`}>
+                                                    {item.name}
+                                                    {item.subMenu && toggleDropdownIndex !== index && <ChevronDown />}
+                                                    {item.subMenu && toggleDropdownIndex === index && <ChevronUp />}
+                                                </div>
+                                            </Link>
+
+                                            {
+                                                item.subMenu && (
+                                                    <div className={styles.dropdownContent}>
+                                                        {
+                                                            item.subMenu.map((subItem, subIndex) => {
+                                                                return (
+                                                                    <Link key={subIndex} href={`${subItem.link}`}>
+                                                                        {subItem.name}
+                                                                    </Link>
+                                                                )
+                                                            })
+                                                        }
+                                                    </div>
+                                                )
+                                            }
+                                        </li>
                                     </ul>
-                                )}
-                            </li>
-                        </ul>
-                    )
-                })}
+                                )
+                            })
+                        }
+                    </div>
+                </div>
             </div>
-        </div>
+        </nav >
     );
 }
