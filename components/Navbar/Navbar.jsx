@@ -1,11 +1,10 @@
 "use client";
 
-import { ChevronDown, ChevronUp, X } from "lucide-react";
-import styles from "./../../styles/LayoutComponents/Navbar.module.css"
+import { ChevronDown, ChevronUp } from "lucide-react";
+import styles from "./Navbar.module.css"
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import WhatsappSVG from "../icons/Whatsapp";
-import LinkedInSVG from "../icons/LinkedIn";
+import React, { useEffect, useState } from "react";
+import { WhatsappSVG, PhoneSVG, InstagramSVG, TwitterSVG, LinkedInSVG } from "./../icons";
 
 export default function Navbar() {
     const [toggleDropdownIndex, setToggleDropdownIndex] = useState(-1);
@@ -52,7 +51,7 @@ export default function Navbar() {
                 },
                 {
                     name: "Post Profile",
-                    link: "/employer/post-job"
+                    link: "/employer/post-profile"
                 }
             ]
         },
@@ -169,6 +168,25 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
+                <div className="bg-white border-b-2 border-gray-300">
+                    <div className="max-w-[1400px] mx-auto py-1 flex justify-end items-center gap-2 px-[15px]">
+                        <div className="cursor-pointer">
+                            <PhoneSVG height={25} width={25} />
+                        </div>
+                        <div className="cursor-pointer">
+                            <WhatsappSVG height={20} width={20} />
+                        </div>
+                        <div className="cursor-pointer">
+                            <LinkedInSVG height={25} width={25} />
+                        </div>
+                        <div className="cursor-pointer">
+                            <InstagramSVG height={25} width={25} />
+                        </div>
+                        <div className="cursor-pointer">
+                            <TwitterSVG height={25} width={25} />
+                        </div>
+                    </div>
+                </div>
                 <div className={styles.navContent}>
                     <div>
                         <Link href="/" className={styles.logo}>
