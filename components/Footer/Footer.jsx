@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { WhatsappSVG, PhoneSVG, InstagramSVG, TwitterSVG, LinkedInSVG } from "./../icons";
+import { MapPin, PhoneCall } from "lucide-react";
 
 export default function Footer() {
     const footerNavigation = {
@@ -11,122 +12,42 @@ export default function Footer() {
                 link: "/services/hot-jobs"
             },
             {
-                name: "Hot Resources",
-                link: "/services/hot-resources?hot=true"
+                name: "Find Candidates",
+                link: "/recruiter/find-candidates"
             },
-            {
-                name: "Profile Validation",
-                link: "/services/profile-validation"
-            },
-            {
-                name: "Web Development",
-                link: "/services/web-development"
-            },
-            {
-                name: "SEO",
-                link: "/services/seo"
-            },
-            {
-                name: "HRM",
-                link: "/services/hrm"
-            },
-            {
-                name: "ATS",
-                link: "/services/ats"
-            },
-            {
-                name: "RPO",
-                link: "/services/rpo"
-            }
-        ],
-        "demo": [
-            {
-                name: "Job Seeker",
-                link: "/demo/job-seeker"
-            },
-            {
-                name: "Employer",
-                link: "/demo/employer"
-            },
-            {
-                name: "Recruiter",
-                link: "/demo/recruiter"
-            },
-            {
-                name: "Profile Validation",
-                link: "/demo/profile-validation"
-            },
-            {
-                name: "HRM",
-                link: "/demo/hrm"
-            },
-            {
-                name: "ATS",
-                link: "/demo/ats"
-            },
-            {
-                name: "RPO",
-                link: "/demo/rpo"
-            },
-        ],
-        "employers_recruiters": [
             {
                 name: "Post a Job",
                 link: "/recruiter/post-job"
             },
             {
-                name: "Find Candidates",
-                link: "/recruiter/find-candidates"
-            },
-            {
-                name: "Post Profile",
-                link: "/employer/post-profile"
-            }
-        ],
-        "job_seekers": [
-            {
-                name: "Post resume",
-                link: "/job-seeker/post-resume"
-            },
-            {
-                name: "Create Job Alert",
-                link: "/job-seeker/create-job-alert"
-            }
-        ],
-        "company_info": [
-            {
-                name: "About Us",
-                link: "/about-us"
-            },
-            {
-                name: "Privacy Policy",
-                link: "/privacy-policy"
-            },
-            {
-                name: "Terms & Conditions",
-                link: "/terms-and-conditions"
-            }
-        ],
-        "contact": [
-            {
                 name: "Contact Sales",
                 link: "/contact-us"
+            }
+        ],
+        "links": [
+            {
+                name: "Our Services",
+                link: "/services"
             },
             {
                 name: "Feedback",
                 link: "/feedback"
+            },
+            {
+                name: "About Us",
+                link: "/about-us"
             }
-        ]
+        ],
     }
 
     return (
         <footer className={styles.footer}>
-            <div className="bg-white border-b-2 border-gray-300">
-                <div className="max-w-[1400px] mx-auto flex justify-between gap-2 items-center py-4">
+            <div className="">
+                <div className="max-w-[1400px] mx-auto flex justify-between gap-2 items-center py-4 border-b-2 border-gray-300">
                     <div>
-                        <Link href="/" className={styles.logo}>
+                        {/* <Link href="/" className={styles.logo}>
                             RightSource360
-                        </Link>
+                        </Link> */}
                     </div>
                     <div>
                         <div className="flex justify-start items-center gap-3">
@@ -150,9 +71,27 @@ export default function Footer() {
                 </div>
             </div>
             <div className="max-w-[1400px] mx-auto flex justify-start gap-2 items-start pt-2 pb-4">
-                <div className="flex-1 max-w-[300px] text-left">
+                <div className="flex-1 max-w-[600px] text-left my-auto">
+                    <div>
+                        <Link href="/" className={styles.logo}>
+                            RightSource360
+                        </Link>
+                    </div>
                     <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Services</li>
+                        <li>
+                            <div className="my-4">
+                                Subscribe our newsletter to get more updates
+                                <div className="w-fit border border-white my-2 px-2 py-2 rounded-xl">
+                                    <input placeholder="Email Address" className="border-none outline-none px-4" />
+                                    <button type="button" className="bg-white text-black rounded-xl px-2 py-1 cursor-pointer font-medium">Subscribe</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex-1 max-w-[250px] text-left">
+                    <ul className={styles.footer_navigation}>
+                        <li className={styles.sectionTitle}>Explore</li>
                         {
                             footerNavigation?.services?.map((item, index) => {
                                 return (
@@ -166,11 +105,11 @@ export default function Footer() {
                         }
                     </ul>
                 </div>
-                <div className="flex-1 max-w-[300px] text-left">
+                <div className="flex-1 max-w-[250px] text-left">
                     <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Demo</li>
+                        <li className={styles.sectionTitle}>Links</li>
                         {
-                            footerNavigation?.demo?.map((item, index) => {
+                            footerNavigation?.links?.map((item, index) => {
                                 return (
                                     <li key={index}>
                                         <Link href={item.link}>
@@ -184,68 +123,35 @@ export default function Footer() {
                 </div>
                 <div className="flex-1 max-w-[300px] text-left">
                     <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Employers and Recruiters</li>
-                        {
-                            footerNavigation?.employers_recruiters?.map((item, index) => {
-                                return (
-                                    <li key={index}>
-                                        <Link href={item.link}>
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Job Seekers</li>
-                        {
-                            footerNavigation?.employers_recruiters?.map((item, index) => {
-                                return (
-                                    <li key={index}>
-                                        <Link href={item.link}>
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-                <div className="flex-1 max-w-[300px] text-left">
-                    <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Company Information</li>
-                        {
-                            footerNavigation?.company_info?.map((item, index) => {
-                                return (
-                                    <li key={index}>
-                                        <Link href={item.link}>
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <ul className={styles.footer_navigation}>
-                        <li className="font-semibold text-xl py-[10px]">Contact Us</li>
-                        {
-                            footerNavigation?.contact?.map((item, index) => {
-                                return (
-                                    <li key={index}>
-                                        <Link href={item.link}>
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
+                        <li className={styles.sectionTitle}>Support</li>
+                        <li>
+                            <div className="flex items-center justify-start gap-4 mb-4">
+                                <div className="p-3 rounded-full">
+                                    <MapPin />
+                                </div>
+                                <div>
+                                    <span>Main location</span><br />
+                                    <div className="text-[18px] font-semibold">55 East Street, New York</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="flex items-center justify-start gap-4 mb-4">
+                                <div className="p-3 rounded-full">
+                                    <PhoneCall />
+                                </div>
+                                <div>
+                                    <span>Have any Question</span><br />
+                                    <div className="text-[18px] font-semibold">Call : (245) 888 990</div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <div className="bg-[#38B2AC]">
-                <div className="max-w-[1400px] mx-auto flex justify-between gap-2 items-center py-3 font-medium">
+            <div className="">
+                <div className="max-w-[1400px] border-t-2 border-gray-300 mx-auto flex justify-between gap-2 items-center py-3 text-white">
                     <div>
                         © 2025 RightSource360. All rights reserved.
                     </div>

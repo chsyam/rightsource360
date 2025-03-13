@@ -2,6 +2,8 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 99;
+    background-color: #40407a;
+    color: #e1e1e1;
 }
 
 .logo {
@@ -10,46 +12,36 @@
     text-decoration: none;
 }
 
+.sectionTitle {
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFFFFF;
+    padding: 10px 0;
+}
+
 .copyright_navigation {
     display: flex;
     justify-content: flex-start;
     gap: 10px;
 }
 
-.copyright_navigation li {
-    position: relative;
-}
-
-.copyright_navigation a {
-    text-decoration: none;
-    padding: 5px 5px;
-    display: block;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.copyright_navigation a:hover {
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 600;
-    transform: translateY(-5px);
-}
-
+.copyright_navigation li,
 .footer_navigation li {
     position: relative;
 }
 
-.footer_navigation a {
+.footer_navigation a,
+.copyright_navigation a {
     text-decoration: none;
     padding: 10px 5px;
     display: block;
     font-size: 16px;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-.footer_navigation a:hover {
+.footer_navigation a:hover,
+.copyright_navigation a:hover {
     color: #0073FF;
     font-size: 16px;
     font-weight: 600;
