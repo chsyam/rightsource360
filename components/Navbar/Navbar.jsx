@@ -168,7 +168,7 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
-                <div className="bg-white border-b-2 border-gray-300">
+                <div className="bg-[#FFF7F7]">
                     <div className="max-w-[1400px] mx-auto py-1 flex justify-end items-center gap-2 px-[15px]">
                         <div className="cursor-pointer">
                             <PhoneSVG height={25} width={25} />
@@ -203,7 +203,7 @@ export default function Navbar() {
                                             onMouseLeave={() => setToggleDropdownIndex(-1)}
                                         >
                                             <Link href={`${item.link}`} className="">
-                                                <div className={`flex items-center gap-[2px] justify-center ${toggleDropdownIndex === index && 'text-[#0073ff]'} ${activeMenuIndex === index && 'text-[#0073ff] font-semibold'}`}>
+                                                <div className={`flex items-center gap-[2px] justify-center ${toggleDropdownIndex === index && 'text-[#FFF]'} ${activeMenuIndex === index && 'text-[#FFF] font-semibold'}`}>
                                                     {item.name}
                                                     {item.subMenu && toggleDropdownIndex !== index && <ChevronDown />}
                                                     {item.subMenu && toggleDropdownIndex === index && <ChevronUp />}
@@ -230,6 +230,9 @@ export default function Navbar() {
                                 )
                             })
                         }
+                    </div>
+                    <div className={styles.navLinks}>
+
                     </div>
                 </div>
             </div>

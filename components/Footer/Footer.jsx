@@ -43,12 +43,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className="">
-                <div className="max-w-[1400px] mx-auto flex justify-between gap-2 items-center py-4 border-b-2 border-gray-300">
-                    <div>
-                        {/* <Link href="/" className={styles.logo}>
-                            RightSource360
-                        </Link> */}
-                    </div>
+                <div className="max-w-[1400px] mx-auto flex justify-end gap-2 items-center py-4 border-b border-black">
                     <div>
                         <div className="flex justify-start items-center gap-3">
                             <div className="cursor-pointer">
@@ -70,8 +65,8 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="max-w-[1400px] mx-auto flex justify-start gap-2 items-start pt-2 pb-4">
-                <div className="flex-1 max-w-[600px] text-left my-auto">
+            <div className="max-w-[1400px] mx-auto my-[30px] flex justify-around gap-2 items-start pt-2 pb-4">
+                <div className="grow-6 text-left my-auto">
                     <div>
                         <Link href="/" className={styles.logo}>
                             RightSource360
@@ -79,17 +74,17 @@ export default function Footer() {
                     </div>
                     <ul className={styles.footer_navigation}>
                         <li>
-                            <div className="my-4">
-                                Subscribe our newsletter to get more updates
-                                <div className="w-fit border border-white my-2 px-2 py-2 rounded-xl">
-                                    <input placeholder="Email Address" className="border-none outline-none px-4" />
-                                    <button type="button" className="bg-white text-black rounded-xl px-2 py-1 cursor-pointer font-medium">Subscribe</button>
+                            <div className="my-4 font-medium">
+                                <span>Subscribe our newsletter to get more updates.</span>
+                                <div className={styles.newsLetter}>
+                                    <input placeholder="Email Address" className="grow border-none outline-none py-2 px-2" />
+                                    <button type="button" className="bg-[#ff5500] text-white px-2 py-1 cursor-pointer font-medium rounded-md">Subscribe</button>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div className="flex-1 max-w-[250px] text-left">
+                <div className="grow-3 text-left max-w-[250px]">
                     <ul className={styles.footer_navigation}>
                         <li className={styles.sectionTitle}>Explore</li>
                         {
@@ -105,7 +100,7 @@ export default function Footer() {
                         }
                     </ul>
                 </div>
-                <div className="flex-1 max-w-[250px] text-left">
+                <div className="grow-3 text-left max-w-[250px]">
                     <ul className={styles.footer_navigation}>
                         <li className={styles.sectionTitle}>Links</li>
                         {
@@ -121,28 +116,28 @@ export default function Footer() {
                         }
                     </ul>
                 </div>
-                <div className="flex-1 max-w-[300px] text-left">
+                <div className="grow-3 text-left">
                     <ul className={styles.footer_navigation}>
                         <li className={styles.sectionTitle}>Support</li>
                         <li>
-                            <div className="flex items-center justify-start gap-4 mb-4">
-                                <div className="p-3 rounded-full">
+                            <div className="flex items-center justify-start gap-2 mb-4">
+                                <div className="p-3 rounded-full bg-[#ffffff]">
                                     <MapPin />
                                 </div>
                                 <div>
-                                    <span>Main location</span><br />
-                                    <div className="text-[18px] font-semibold">55 East Street, New York</div>
+                                    <span className="font-medium text-sm">Main location</span><br />
+                                    <div className="text-[16px] font-semibold">55 East Street, New York</div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div className="flex items-center justify-start gap-4 mb-4">
-                                <div className="p-3 rounded-full">
+                            <div className="flex items-center justify-start gap-2 mb-4">
+                                <div className="p-3 rounded-full bg-[#ffffff]">
                                     <PhoneCall />
                                 </div>
                                 <div>
-                                    <span>Have any Question</span><br />
-                                    <div className="text-[18px] font-semibold">Call : (245) 888 990</div>
+                                    <span className="font-medium text-sm">Have any Question</span><br />
+                                    <div className="text-[16px] font-semibold">Call : (245) 888 990</div>
                                 </div>
                             </div>
                         </li>
@@ -151,7 +146,7 @@ export default function Footer() {
             </div>
 
             <div className="">
-                <div className="max-w-[1400px] border-t-2 border-gray-300 mx-auto flex justify-between gap-2 items-center py-3 text-white">
+                <div className="max-w-[1400px] border-t border-black mx-auto flex justify-between gap-2 items-center py-2 font-medium">
                     <div>
                         © 2025 RightSource360. All rights reserved.
                     </div>

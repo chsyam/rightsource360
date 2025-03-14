@@ -1,0 +1,43 @@
+.feedbackForm {
+    background-color: #ECE8E0;
+    width: 100%;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.formGroup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.formElement {
+    flex: 1 1 250px;
+}
+
+.formElement input[type="text"],
+.formElement textarea {
+    background-color: white;
+    padding: 15px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+
+.formElement textarea {
+    min-height: 150px;
+}
+
+.formElement input[type="button"] {
+    background-color: #1230AE;
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
