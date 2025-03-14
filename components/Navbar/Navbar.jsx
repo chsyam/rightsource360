@@ -168,7 +168,7 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
-                <div className="bg-[#FFF7F7]">
+                <div className="bg-[#FFFFFF]">
                     <div className="max-w-[1400px] mx-auto py-1 flex justify-end items-center gap-2 px-[15px]">
                         <div className="cursor-pointer">
                             <PhoneSVG height={25} width={25} />

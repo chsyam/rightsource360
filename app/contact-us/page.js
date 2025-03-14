@@ -16,33 +16,33 @@ export default function ContactUS() {
                     </div>
                     <div>
                         <div className="flex justify-start items-center gap-4 my-6">
-                            <div className="p-4 bg-[#1230AE] rounded-md">
+                            <div className="p-4 bg-[#00879E] rounded-md">
                                 <PhoneCall size={26} color="white" strokeWidth={2} />
                             </div>
                             <div>
-                                <span className="font-medium text-[18px] text-[#1230AE]">
+                                <span className="font-medium text-[18px] text-[#00879E]">
                                     Support
                                 </span><br />
                                 <span className="text-[20px]">+ (245) 888 990</span>
                             </div>
                         </div>
                         <div className="flex justify-start items-center gap-4 my-6">
-                            <div className="p-4 bg-[#1230AE] rounded-md">
+                            <div className="p-4 bg-[#00879E] rounded-md">
                                 <Mail size={26} color="white" strokeWidth={2} />
                             </div>
                             <div>
-                                <span className="font-medium text-[18px] text-[#1230AE]">
+                                <span className="font-medium text-[18px] text-[#00879E]">
                                     Write to us
                                 </span><br />
                                 <span className="text-[20px]">syamkumar6845@gmail.com</span>
                             </div>
                         </div>
                         <div className="flex justify-start items-center gap-4 my-6">
-                            <div className="p-4 bg-[#1230AE] rounded-md">
+                            <div className="p-4 bg-[#00879E] rounded-md">
                                 <MapPin size={26} color="white" strokeWidth={2} />
                             </div>
                             <div>
-                                <span className="font-medium text-[18px] text-[#1230AE]">
+                                <span className="font-medium text-[18px] text-[#00879E]">
                                     Visit Anytime
                                 </span><br />
                                 <span className="text-[20px]">30 broklyn golden street, New York</span>
@@ -51,11 +51,11 @@ export default function ContactUS() {
                         <div>
                             <div>
                                 <span>Work Timings:</span>
-                                <span className="text-[18px] px-2 text-[#1230AE] font-medium">9.30 AM to 6.30 PM</span>
+                                <span className="text-[18px] px-2 text-[#00879E] font-medium">9.30 AM to 6.30 PM</span>
                             </div>
                             <div>
                                 <span>Working Days:</span>
-                                <span className="text-[18px] px-2 text-[#1230AE] font-medium">(Monday to Friday)</span>
+                                <span className="text-[18px] px-2 text-[#00879E] font-medium">(Monday to Friday)</span>
                             </div>
                         </div>
                     </div>

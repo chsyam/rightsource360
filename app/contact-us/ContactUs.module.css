@@ -1,5 +1,5 @@
 .feedbackForm {
-    background-color: #ECE8E0;
+    background-color: #FFF2DB;
     width: 100%;
     padding: 20px 30px;
     border-radius: 10px;
@@ -32,7 +32,7 @@
 }
 
 .formElement input[type="button"] {
-    background-color: #1230AE;
+    background-color: #00879E;
     color: white;
     font-weight: 500;
     padding: 10px 15px;
